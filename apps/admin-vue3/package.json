@@ -1,0 +1,23 @@
+{
+  "name": "admin-vue3",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview --port 5173"
+  },
+  "dependencies": {
+    "vue": "^3.3.0",
+    "@form-pilot/vue": "workspace:*",
+    "@form-pilot/mcp-client": "workspace:*",
+    "@form-pilot/adapter-plain": "workspace:*",
+    "vue-demi": "^0.14.6"
+  },
+  "devDependencies": {
+    "vite": "^5.0.0",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "typescript": "^5.4.0"
+  }
+}

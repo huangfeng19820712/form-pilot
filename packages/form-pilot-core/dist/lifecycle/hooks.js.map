@@ -1,0 +1,1 @@
+{"version":3,"file":"hooks.js","sourceRoot":"","sources":["../../src/lifecycle/hooks.ts"],"names":[],"mappings":"AAGA,MAAM,UAAU,WAAW,CAAI,KAAuB;IACpD,qEAAqE;IACrE,OAAO;QACL,SAAS,EAAE,KAAK,EAAE,SAAS;QAC3B,QAAQ,EAAE,KAAK,EAAE,QAAQ;QACzB,cAAc,EAAE,KAAK,EAAE,cAAc;QACrC,YAAY,EAAE,KAAK,EAAE,YAAY;KAClC,CAAC;AACJ,CAAC"}

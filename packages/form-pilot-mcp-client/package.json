@@ -1,0 +1,32 @@
+{
+  "name": "@form-pilot/mcp-client",
+  "version": "0.1.0",
+  "private": false,
+  "description": "FormPilot MCP client - controlled tool execution with guards and audit",
+  "license": "MIT",
+  "type": "module",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "lint": "echo 'no lint setup'",
+    "clean": "rimraf dist || rmdir /s /q dist"
+  },
+  "peerDependencies": {
+    "vue": ">=2.6.0 || >=3.3.0"
+  },
+  "dependencies": {
+    "vue-demi": "^0.14.6",
+    "@form-pilot/core": "workspace:*",
+    "@form-pilot/vue": "workspace:*"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "rimraf": "^5.0.5"
+  }
+}
