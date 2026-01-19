@@ -1,5 +1,5 @@
 import type { ToolResult, ClientGuardConfig } from "../types/index.js";
-import type { AiFormHandle } from "@form-pilot/vue";
+import type { AiFormHandle } from "@huangfeng19820712/vue";
 import { AuditLogger } from "../utils/logger.js";
 import { requireSubmitConfirm } from "../guard/confirm.js";
 

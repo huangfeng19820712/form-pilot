@@ -1,5 +1,5 @@
 {
-  "name": "@form-pilot/mcp-client",
+  "name": "@huangfeng19820712/mcp-client",
   "version": "0.1.0",
   "private": false,
   "description": "FormPilot MCP client - controlled tool execution with guards and audit",
@@ -22,11 +22,14 @@
   },
   "dependencies": {
     "vue-demi": "^0.14.6",
-    "@form-pilot/core": "workspace:*",
-    "@form-pilot/vue": "workspace:*"
+    "@huangfeng19820712/core": "workspace:*",
+    "@huangfeng19820712/vue": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.4.0",
     "rimraf": "^5.0.5"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }

@@ -22,7 +22,7 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
-import type { MCPClient } from '@form-pilot/mcp-client'
+import type { MCPClient } from '@huangfeng19820712/mcp-client'
 
 const props = defineProps<{ client: MCPClient; formId?: string }>()
 

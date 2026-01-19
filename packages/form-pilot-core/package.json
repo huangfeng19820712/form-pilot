@@ -1,5 +1,5 @@
 {
-  "name": "@form-pilot/core",
+  "name": "@huangfeng19820712/core",
   "version": "0.1.0",
   "private": false,
   "description": "FormPilot core - framework-agnostic form semantics and adapter contracts",
@@ -20,5 +20,8 @@
   "devDependencies": {
     "typescript": "^5.4.0",
     "rimraf": "^5.0.5"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }
