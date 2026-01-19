@@ -1,5 +1,11 @@
 # @fhuang/form-pilot-core
 
+## 0.1.5
+
+### Patch Changes
+
+- [`635a0067c6f5db35dfb3b16fb2738c32a1cf816b`](https://github.com/huangfeng19820712/form-pilot/commit/635a0067c6f5db35dfb3b16fb2738c32a1cf816b) - 发布测试：再次增加一次补丁版本，复跑 CI 工作流并执行 npm 发布。
+
 ## 0.1.4
 
 ### Patch Changes
