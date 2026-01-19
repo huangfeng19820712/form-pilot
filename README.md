@@ -4,9 +4,9 @@
 
 ## 项目结果概览
 
-- 支持 Vue2 与 Vue3 的统一接入层（`@form-pilot/vue`）
-- 框架无关的核心表单语义与适配器契约（`@form-pilot/core`）
-- 前端 MCP 客户端，提供受控工具、权限守卫与审计（`@form-pilot/mcp-client`）
+- 支持 Vue2 与 Vue3 的统一接入层（`@huangfeng19820712/form-pilot-vue`）
+- 框架无关的核心表单语义与适配器契约（`@huangfeng19820712/form-pilot-core`）
+- 前端 MCP 客户端，提供受控工具、权限守卫与审计（`@huangfeng19820712/form-pilot-mcp-client`）
 - pnpm 工作区，TypeScript 优先，清晰包边界与可扩展架构
 
 ## 架构示意
@@ -19,7 +19,7 @@
                             | useAiForm(formRef, options)
                             v
 ---------------------------------------------------------------+
-|                      @form-pilot/vue (Adapter)                 |
+|          @huangfeng19820712/form-pilot-vue (Adapter)           |
 | - Vue2/Vue3 统一绑定层（vue-demi）                               |
 | - 暴露安全句柄：getSchema / setValues / getValues / validate / submit |
 | - 仅桥接，不实现表单语义                                        |
@@ -27,7 +27,7 @@
                             | delegate
                             v
 ---------------------------------------------------------------+
-|                      @form-pilot/core (Kernel)                 |
+|          @huangfeng19820712/form-pilot-core (Kernel)           |
 | - 表单语义：Schema/Normalize/Validate/Submit                   |
 | - 适配器契约：对真实表单实例的抽象                              |
 | - 生命周期钩子：beforeSet/afterSet/beforeValidate/beforeSubmit |
@@ -36,7 +36,7 @@
                             ^
                             |
 ---------------------------------------------------------------+
-|                 @form-pilot/mcp-client (MCP Layer)             |
+|     @huangfeng19820712/form-pilot-mcp-client (MCP Layer)       |
 | - 受控工具：getFormSchema/setFormValues/validateForm/submitForm |
 | - 守卫：字段白名单、可写校验、提交确认                          |
 | - 审计：结构化日志，外部钩子转发                                 |
@@ -65,13 +65,13 @@ form-pilot/
 
 ## 包职责说明
 
-- `@form-pilot/core`
+- `@huangfeng19820712/form-pilot-core`
   - 内核：表单 schema 抽取/规范化、行为抽象、适配器契约、生命周期钩子
-  - 不依赖任何前端框架；仅作为 `@form-pilot/vue` 与 `@form-pilot/mcp-client` 的内部依赖
-- `@form-pilot/vue`
+  - 不依赖任何前端框架；仅作为 `@huangfeng19820712/form-pilot-vue` 与 `@huangfeng19820712/form-pilot-mcp-client` 的内部依赖
+- `@huangfeng19820712/form-pilot-vue`
   - Vue 接入层：统一 Vue2/Vue3，通过 `useAiForm(formRef, options)` 暴露安全句柄
   - 不实现语义；所有操作委托到核心桥接层
-- `@form-pilot/mcp-client`
+- `@huangfeng19820712/form-pilot-mcp-client`
   - MCP 客户端：受控工具暴露、权限守卫、提交确认、审计日志、WS/SSE 连接
   - 仅在需要 AI 操作表单的应用中使用；不让业务直接接触 core
 
@@ -93,8 +93,8 @@ pnpm -w run build
 - Vue 应用集成示例
 
 ```ts
-import { useAiForm, FormPilotPlugin } from '@form-pilot/vue'
-import { MCPClient } from '@form-pilot/mcp-client'
+import { useAiForm, FormPilotPlugin } from '@huangfeng19820712/form-pilot-vue'
+import { MCPClient } from '@huangfeng19820712/form-pilot-mcp-client'
 
 // 注册适配器与钩子（可选）
 app.use(FormPilotPlugin, {

@@ -1,15 +1,15 @@
-# @form-pilot/mcp-client
+# @huangfeng19820712/form-pilot-mcp-client
 
-面向企业的前端 MCP 客户端，安全地让 AI 通过受控工具操作真实 Vue 表单。该包是 AI/MCP 与 `@form-pilot/vue` 之间的安全桥梁，强制权限、字段级防护、提交确认，并对每一次 AI 操作进行结构化审计。
+面向企业的前端 MCP 客户端，安全地让 AI 通过受控工具操作真实 Vue 表单。该包是 AI/MCP 与 `@huangfeng19820712/form-pilot-vue` 之间的安全桥梁，强制权限、字段级防护、提交确认，并对每一次 AI 操作进行结构化审计。
 
 ## 依赖
 
 - 运行时
   - `vue`（peer）：Vue 2.6+ 或 Vue 3.3+
   - `vue-demi`：统一 Vue2/Vue3 访问层
-  - `@form-pilot/vue`：唯一表单接入层（业务仅依赖此包与 MCP 客户端）
+  - `@huangfeng19820712/form-pilot-vue`：唯一表单接入层（业务仅依赖此包与 MCP 客户端）
 - 工作区内部
-  - `@form-pilot/core`：表单语义与适配器契约（不直接暴露给业务）
+  - `@huangfeng19820712/form-pilot-core`：表单语义与适配器契约（不直接暴露给业务）
 
 > 不包含后端、AI 决策或 MCP 服务端实现。该包仅在前端执行受控工具调用。
 
@@ -24,7 +24,7 @@ pnpm install
 - 外部项目（发布后）
 
 ```bash
-pnpm add @form-pilot/mcp-client @form-pilot/vue vue-demi
+pnpm add @huangfeng19820712/form-pilot-mcp-client @huangfeng19820712/form-pilot-vue vue-demi
 ```
 
 确保你的应用依赖了 `vue`（2 或 3）与对应 UI 表单库；AI 仅通过 MCP 工具操作，不直接访问 DOM。
@@ -34,7 +34,7 @@ pnpm add @form-pilot/mcp-client @form-pilot/vue vue-demi
 1) 在 Vue 应用中创建表单句柄（仅示例，实际表单由你的 UI 库提供）：
 
 ```ts
-import { useAiForm } from '@form-pilot/vue'
+import { useAiForm } from '@huangfeng19820712/form-pilot-vue'
 
 const formHandle = () => useAiForm(formRef, { id: 'userCreate' })
 ```
@@ -42,7 +42,7 @@ const formHandle = () => useAiForm(formRef, { id: 'userCreate' })
 2) 创建 MCP 客户端并配置守卫与审计：
 
 ```ts
-import { MCPClient } from '@form-pilot/mcp-client'
+import { MCPClient } from '@huangfeng19820712/form-pilot-mcp-client'
 
 const client = new MCPClient({
   actor: 'ai-bot',
@@ -104,7 +104,7 @@ await client.dispatch({ tool: 'setFormValues', params: { formId: 'userCreate', v
   - `submitRequiresConfirm`: 开启后，AI 提交必须二次确认
   - `confirm(formId)`: 自定义确认逻辑（弹窗/策略服务等）
 - 无 DOM 访问
-  - 表单操作全部通过 `@form-pilot/vue` 的句柄方法委托，实现兼容 Vue2/Vue3
+- 表单操作全部通过 `@huangfeng19820712/form-pilot-vue` 的句柄方法委托，实现兼容 Vue2/Vue3
 
 ## 审计日志
 
@@ -131,8 +131,8 @@ pnpm -w run build
 - 仅构建 MCP 客户端
 
 ```bash
-pnpm --filter @form-pilot/mcp-client run typecheck
-pnpm --filter @form-pilot/mcp-client run build
+pnpm --filter @huangfeng19820712/form-pilot-mcp-client run typecheck
+pnpm --filter @huangfeng19820712/form-pilot-mcp-client run build
 ```
 
 - 在应用中调试
@@ -153,10 +153,10 @@ pnpm --filter @form-pilot/mcp-client run build
 
 ## 约束与边界
 
-- 不实现或暴露 `@form-pilot/core` 细节，业务仅通过 `@form-pilot/vue` 与本包交互
+- 不实现或暴露 `@huangfeng19820712/form-pilot-core` 细节，业务仅通过 `@huangfeng19820712/form-pilot-vue` 与本包交互
 - 不硬编码任何 UI 库 API；兼容由适配器支持的表单实现
 - 不实现 AI 决策或后端服务；本包仅执行受控工具调用
 
 ---
 
-如需在你的表单系统中启用 AI 操作：先用 `@form-pilot/vue` 将真实表单接入，再用 `MCPClient` 开启受控工具能力与审计。该方案在 Vue2/Vue3 下保持一致 API，满足企业级的权限与合规要求。
+如需在你的表单系统中启用 AI 操作：先用 `@huangfeng19820712/form-pilot-vue` 将真实表单接入，再用 `MCPClient` 开启受控工具能力与审计。该方案在 Vue2/Vue3 下保持一致 API，满足企业级的权限与合规要求。
