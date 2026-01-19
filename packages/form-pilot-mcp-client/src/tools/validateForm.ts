@@ -1,5 +1,5 @@
 import type { ToolResult } from "../types/index.js";
-import type { AiFormHandle } from "@huangfeng19820712/vue";
+import type { AiFormHandle } from "@huangfeng19820712/form-pilot-vue";
 import { AuditLogger } from "../utils/logger.js";
 
 export async function validateForm(formId: string, getHandle: () => AiFormHandle | undefined, logger: AuditLogger, actor?: string): Promise<ToolResult> {

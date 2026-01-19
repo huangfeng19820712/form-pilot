@@ -1,5 +1,5 @@
-import type { AdapterDescriptor } from "@huangfeng19820712/core";
-import type { FormLifecycleHooks } from "@huangfeng19820712/core";
+import type { AdapterDescriptor } from "@huangfeng19820712/form-pilot-core";
+import type { FormLifecycleHooks } from "@huangfeng19820712/form-pilot-core";
 
 export interface UseAiFormOptions<I = unknown> {
   id?: string;

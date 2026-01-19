@@ -1,5 +1,5 @@
 import type { ToolResult, FieldGuardConfig } from "../types/index.js";
-import type { AiFormHandle } from "@huangfeng19820712/vue";
+import type { AiFormHandle } from "@huangfeng19820712/form-pilot-vue";
 import { filterAllowedValues } from "../guard/permission.js";
 import { AuditLogger } from "../utils/logger.js";
 

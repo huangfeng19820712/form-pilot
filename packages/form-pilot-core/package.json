@@ -1,5 +1,5 @@
 {
-  "name": "@huangfeng19820712/core",
+  "name": "@huangfeng19820712/form-pilot-core",
   "version": "0.1.0",
   "private": false,
   "description": "FormPilot core - framework-agnostic form semantics and adapter contracts",

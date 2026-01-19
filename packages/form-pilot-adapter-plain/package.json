@@ -1,5 +1,5 @@
 {
-  "name": "@huangfeng19820712/adapter-plain",
+  "name": "@huangfeng19820712/form-pilot-adapter-plain",
   "version": "0.1.0",
   "private": false,
   "description": "Plain object form adapter for FormPilot demos (no UI library)",
@@ -16,7 +16,7 @@
     "clean": "rimraf dist || rmdir /s /q dist"
   },
   "dependencies": {
-    "@huangfeng19820712/core": "workspace:*"
+    "@huangfeng19820712/form-pilot-core": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.4.0",

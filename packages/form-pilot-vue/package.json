@@ -1,5 +1,5 @@
 {
-  "name": "@huangfeng19820712/vue",
+  "name": "@huangfeng19820712/form-pilot-vue",
   "version": "0.1.0",
   "private": false,
   "description": "FormPilot Vue binding layer (Vue2/Vue3 unified)",
@@ -22,7 +22,7 @@
   },
   "dependencies": {
     "vue-demi": "^0.14.6",
-    "@huangfeng19820712/core": "workspace:*"
+    "@huangfeng19820712/form-pilot-core": "workspace:*"
   },
   "devDependencies": {
     "typescript": "^5.4.0",
