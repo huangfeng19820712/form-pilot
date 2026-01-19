@@ -43,6 +43,7 @@ jobs:
         env:
           HUSKY: 0
           SKIP_HUSKY: 1
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit version changes
         run: |
