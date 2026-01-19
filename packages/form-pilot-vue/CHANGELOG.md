@@ -1,5 +1,14 @@
 # @fhuang/form-pilot-vue
 
+## 0.1.3
+
+### Patch Changes
+
+- [`a2b68eacb622ba6db69cacb4d2b6f70f82946543`](https://github.com/huangfeng19820712/form-pilot/commit/a2b68eacb622ba6db69cacb4d2b6f70f82946543) - 测试发布：再次触发一次补丁版本以验证工作流条件提交与 npm 发布配置。
+
+- Updated dependencies [[`a2b68eacb622ba6db69cacb4d2b6f70f82946543`](https://github.com/huangfeng19820712/form-pilot/commit/a2b68eacb622ba6db69cacb4d2b6f70f82946543)]:
+  - @fhuang/form-pilot-core@0.1.3
+
 ## 0.1.2
 
 ### Patch Changes

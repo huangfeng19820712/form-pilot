@@ -1,6 +1,6 @@
 {
   "name": "@fhuang/form-pilot-adapter-plain",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "private": false,
   "description": "Plain object form adapter for FormPilot demos (no UI library)",
   "license": "MIT",
