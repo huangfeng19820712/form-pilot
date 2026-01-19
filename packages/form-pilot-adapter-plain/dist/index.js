@@ -1,4 +1,4 @@
-import { defineAdapter } from "@form-pilot/core";
+import { defineAdapter } from "@fhuang/form-pilot-core";
 export const PlainAdapter = defineAdapter({
     id: "plain",
     capabilities: ["schema", "values", "validate", "submit"],

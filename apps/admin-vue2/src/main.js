@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
-import { FormPilotPlugin } from '@form-pilot/vue'
-import PlainAdapter from '@form-pilot/adapter-plain'
+import { FormPilotPlugin } from '@fhuang/form-pilot-vue'
+import PlainAdapter from '@fhuang/form-pilot-adapter-plain'
 
 Vue.config.productionTip = false
 Vue.use(FormPilotPlugin, { adapters: [PlainAdapter] })

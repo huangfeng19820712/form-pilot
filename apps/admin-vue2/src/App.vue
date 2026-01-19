@@ -22,8 +22,8 @@
 </template>
 
 <script>
-import { useAiForm } from '@form-pilot/vue'
-import { MCPClient } from '@form-pilot/mcp-client'
+import { useAiForm } from '@fhuang/form-pilot-vue'
+import { MCPClient } from '@fhuang/form-pilot-mcp-client'
 import FormPanel from './components/FormPanel.vue'
 import ChatPanel from './components/ChatPanel.vue'
 

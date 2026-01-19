@@ -1,5 +1,5 @@
-import { defineAdapter } from "@form-pilot/core";
-import type { AdapterDescriptor, FormSchema, FormFieldSchema } from "@form-pilot/core";
+import { defineAdapter } from "@fhuang/form-pilot-core";
+import type { AdapterDescriptor, FormSchema, FormFieldSchema } from "@fhuang/form-pilot-core";
 
 export const PlainAdapter: AdapterDescriptor<any> = defineAdapter<any>({
   id: "plain",

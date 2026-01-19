@@ -1,4 +1,4 @@
-import type { AiFormHandle } from "@form-pilot/vue";
+import type { AiFormHandle } from "@fhuang/form-pilot-vue";
 import { AuditLogger } from "./utils/logger.js";
 import type { MCPClientOptions, ToolCall, ToolResult, ToolName, FormRegistry, FieldGuardConfig } from "./types/index.js";
 import { getFormSchema } from "./tools/getFormSchema.js";

@@ -17,13 +17,13 @@ importers:
 
   apps/admin-vue2:
     dependencies:
-      '@form-pilot/adapter-plain':
+      '@fhuang/form-pilot-adapter-plain':
         specifier: workspace:*
         version: link:../../packages/form-pilot-adapter-plain
-      '@form-pilot/mcp-client':
+      '@fhuang/form-pilot-mcp-client':
         specifier: workspace:*
         version: link:../../packages/form-pilot-mcp-client
-      '@form-pilot/vue':
+      '@fhuang/form-pilot-vue':
         specifier: workspace:*
         version: link:../../packages/form-pilot-vue
       vue:
@@ -45,13 +45,13 @@ importers:
 
   apps/admin-vue3:
     dependencies:
-      '@form-pilot/adapter-plain':
+      '@fhuang/form-pilot-adapter-plain':
         specifier: workspace:*
         version: link:../../packages/form-pilot-adapter-plain
-      '@form-pilot/mcp-client':
+      '@fhuang/form-pilot-mcp-client':
         specifier: workspace:*
         version: link:../../packages/form-pilot-mcp-client
-      '@form-pilot/vue':
+      '@fhuang/form-pilot-vue':
         specifier: workspace:*
         version: link:../../packages/form-pilot-vue
       vue:
@@ -73,7 +73,7 @@ importers:
 
   packages/form-pilot-adapter-plain:
     dependencies:
-      '@form-pilot/core':
+      '@fhuang/form-pilot-core':
         specifier: workspace:*
         version: link:../form-pilot-core
     devDependencies:
@@ -95,10 +95,10 @@ importers:
 
   packages/form-pilot-mcp-client:
     dependencies:
-      '@form-pilot/core':
+      '@fhuang/form-pilot-core':
         specifier: workspace:*
         version: link:../form-pilot-core
-      '@form-pilot/vue':
+      '@fhuang/form-pilot-vue':
         specifier: workspace:*
         version: link:../form-pilot-vue
       vue:
@@ -117,7 +117,7 @@ importers:
 
   packages/form-pilot-vue:
     dependencies:
-      '@form-pilot/core':
+      '@fhuang/form-pilot-core':
         specifier: workspace:*
         version: link:../form-pilot-core
       vue:

@@ -1,8 +1,8 @@
-import { createFormRuntime } from "@form-pilot/core";
-import { setValues as coreSetValues } from "@form-pilot/core";
-import { getValues as coreGetValues } from "@form-pilot/core";
-import { validate as coreValidate } from "@form-pilot/core";
-import { submit as coreSubmit } from "@form-pilot/core";
+import { createFormRuntime } from "@fhuang/form-pilot-core";
+import { setValues as coreSetValues } from "@fhuang/form-pilot-core";
+import { getValues as coreGetValues } from "@fhuang/form-pilot-core";
+import { validate as coreValidate } from "@fhuang/form-pilot-core";
+import { submit as coreSubmit } from "@fhuang/form-pilot-core";
 function noOpHandle() {
     return {
         getSchema: () => ({ fields: [] }),
