@@ -1,5 +1,14 @@
 # @fhuang/form-pilot-adapter-plain
 
+## 0.1.4
+
+### Patch Changes
+
+- [`4258d47a98634d7c58708e8b57cc8a045c95aaab`](https://github.com/huangfeng19820712/form-pilot/commit/4258d47a98634d7c58708e8b57cc8a045c95aaab) - 发布测试：为所有包增加一次补丁版本以触发 CI 工作流的 changeset version 与 npm 发布。
+
+- Updated dependencies [[`4258d47a98634d7c58708e8b57cc8a045c95aaab`](https://github.com/huangfeng19820712/form-pilot/commit/4258d47a98634d7c58708e8b57cc8a045c95aaab)]:
+  - @fhuang/form-pilot-core@0.1.4
+
 ## 0.1.3
 
 ### Patch Changes

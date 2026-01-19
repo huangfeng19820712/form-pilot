@@ -1,5 +1,14 @@
 # admin-vue2
 
+## 0.1.4
+
+### Patch Changes
+
+- Updated dependencies [[`4258d47a98634d7c58708e8b57cc8a045c95aaab`](https://github.com/huangfeng19820712/form-pilot/commit/4258d47a98634d7c58708e8b57cc8a045c95aaab)]:
+  - @fhuang/form-pilot-vue@0.1.4
+  - @fhuang/form-pilot-mcp-client@0.1.4
+  - @fhuang/form-pilot-adapter-plain@0.1.4
+
 ## 0.1.3
 
 ### Patch Changes
