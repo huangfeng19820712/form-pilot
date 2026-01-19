@@ -33,44 +33,26 @@ jobs:
       - name: Build all packages
         run: pnpm -w run build
 
-      - name: Changesets Version and Publish
-        id: changesets
-        uses: changesets/action@v1
-        with:
-          version: pnpm changeset version
-          publish: pnpm -r publish --access public
+      - name: Configure Git user
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+      - name: Version packages (Changesets)
+        run: pnpm changeset version
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           HUSKY: 0
           SKIP_HUSKY: 1
 
-  publish-github-packages:
-    name: Publish to GitHub Packages (same versions)
-    runs-on: ubuntu-latest
-    needs: release-npm
-    if: needs.release-npm.outputs.published == 'true'
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node + pnpm (GitHub Packages registry)
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18.x'
-          registry-url: 'https://npm.pkg.github.com'
-
-      - name: Setup pnpm
-        uses: pnpm/action-setup@v4
-        
-
-      - name: Install
-        run: pnpm -w install --frozen-lockfile
-
-      - name: Build all packages
-        run: pnpm -w run build
-
-      - name: Publish to GitHub Packages
-        run: pnpm -r publish --no-git-checks --registry=https://npm.pkg.github.com
+      - name: Commit version changes
+        run: |
+          git add -A
+          git commit -m "chore(release): version packages"
+          git push
         env:
-          NODE_AUTH_TOKEN: ${{ secrets.GH_PACKAGES_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to npm
+        run: pnpm -r publish --access public
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
