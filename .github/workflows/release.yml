@@ -48,14 +48,22 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Commit version changes
+        id: commit
         run: |
-          git add -A
-          git commit -m "chore(release): version packages"
-          git push
+          if git status --porcelain | grep .; then
+            git add -A
+            git commit -m "chore(release): version packages"
+            git push
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "No changes to commit"
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Publish to npm
+        if: steps.commit.outputs.has_changes == 'true'
         run: pnpm -r publish --access public
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
