@@ -1,6 +1,6 @@
-# @huangfeng19820712/form-pilot-core
+# @fhuang/form-pilot-core
 
-FormPilot 的表单智能内核，提供框架无关、运行时无关、UI 无关的表单语义与适配器契约。该包仅作为内部基础设施被 `@huangfeng19820712/form-pilot-vue` 与 `@huangfeng19820712/form-pilot-mcp-client` 使用，业务应用不应直接依赖本包。
+FormPilot 的表单智能内核，提供框架无关、运行时无关、UI 无关的表单语义与适配器契约。该包仅作为内部基础设施被 `@fhuang/form-pilot-vue` 与 `@fhuang/form-pilot-mcp-client` 使用，业务应用不应直接依赖本包。
 
 ## 依赖
 
@@ -30,7 +30,7 @@ import {
   getValues,
   validate,
   submit,
-} from '@huangfeng19820712/form-pilot-core'
+} from '@fhuang/form-pilot-core'
 
 // 1) 定义一个适配器（示意：根据你的 UI 表单实例提供能力）
 const MyAdapter = defineAdapter({
@@ -72,8 +72,8 @@ pnpm -w run build
 - 仅构建 core
 
 ```bash
-pnpm --filter @huangfeng19820712/form-pilot-core run typecheck
-pnpm --filter @huangfeng19820712/form-pilot-core run build
+pnpm --filter @fhuang/form-pilot-core run typecheck
+pnpm --filter @fhuang/form-pilot-core run build
 ```
 
 ## 扩展开发
@@ -90,4 +90,4 @@ pnpm --filter @huangfeng19820712/form-pilot-core run build
 
 - 不访问 DOM，不引入 Vue/React 等框架
 - 不实现或暴露 UI 库 API，不包含 AI/MCP/权限逻辑
-- 业务应用不直接依赖本包；通过 `@huangfeng19820712/form-pilot-vue` 与 `@huangfeng19820712/form-pilot-mcp-client` 间接使用
+- 业务应用不直接依赖本包；通过 `@fhuang/form-pilot-vue` 与 `@fhuang/form-pilot-mcp-client` 间接使用

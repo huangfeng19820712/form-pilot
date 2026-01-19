@@ -1,4 +1,4 @@
-import type { AiFormHandle } from "@huangfeng19820712/form-pilot-vue";
+import type { AiFormHandle } from "@fhuang/form-pilot-vue";
 
 export type ToolName = "getFormSchema" | "setFormValues" | "validateForm" | "submitForm";
 

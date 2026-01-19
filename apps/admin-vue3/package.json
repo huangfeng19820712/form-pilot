@@ -10,9 +10,9 @@
   },
   "dependencies": {
     "vue": "^3.3.0",
-    "@huangfeng19820712/form-pilot-vue": "workspace:*",
-    "@huangfeng19820712/form-pilot-mcp-client": "workspace:*",
-    "@huangfeng19820712/form-pilot-adapter-plain": "workspace:*",
+    "@fhuang/form-pilot-vue": "workspace:*",
+    "@fhuang/form-pilot-mcp-client": "workspace:*",
+    "@fhuang/form-pilot-adapter-plain": "workspace:*",
     "vue-demi": "^0.14.6"
   },
   "devDependencies": {

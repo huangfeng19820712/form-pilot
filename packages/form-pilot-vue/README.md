@@ -1,4 +1,4 @@
-# @huangfeng19820712/form-pilot-vue
+# @fhuang/form-pilot-vue
 
 FormPilot 的 Vue 接入层（Vue2/Vue3 统一）。该包是业务应用唯一需要依赖的前端入口，用于将真实 Vue 表单安全接入到 FormPilot 内核与 MCP 工具层。
 
@@ -8,7 +8,7 @@ FormPilot 的 Vue 接入层（Vue2/Vue3 统一）。该包是业务应用唯一�
   - `vue`（peer）：Vue 2.6+ 或 Vue 3.3+
   - `vue-demi`：统一访问 Vue2/Vue3 的 API
 - 工作区内部
-  - 间接使用 `@huangfeng19820712/form-pilot-core`（不直接暴露给业务）
+  - 间接使用 `@fhuang/form-pilot-core`（不直接暴露给业务）
 
 > 本包仅提供 Vue 绑定与统一 API，不实现表单语义、不访问 DOM、不硬编码 UI 库。
 
@@ -23,7 +23,7 @@ pnpm install
 - 外部项目（发布后）
 
 ```bash
-pnpm add @huangfeng19820712/form-pilot-vue vue-demi
+pnpm add @fhuang/form-pilot-vue vue-demi
 ```
 
 ## 公共 API
@@ -42,7 +42,7 @@ pnpm add @huangfeng19820712/form-pilot-vue vue-demi
 ## 快速使用
 
 ```ts
-import { useAiForm, FormPilotPlugin } from '@huangfeng19820712/form-pilot-vue'
+import { useAiForm, FormPilotPlugin } from '@fhuang/form-pilot-vue'
 import Vue from 'vue'
 
 // 1) 可选：在应用初始化时注册适配器与钩子
@@ -69,16 +69,16 @@ const submitRes = await handle.submit()
 
 ## 与 AI/MCP 集成
 
-- 当你需要让 AI 操作表单时，结合 `@huangfeng19820712/form-pilot-mcp-client` 使用：
+- 当你需要让 AI 操作表单时，结合 `@fhuang/form-pilot-mcp-client` 使用：
 
 ```ts
-import { MCPClient } from '@huangfeng19820712/form-pilot-mcp-client'
+import { MCPClient } from '@fhuang/form-pilot-mcp-client'
 
 const client = new MCPClient({ /* 守卫与审计配置 */ })
 client.registerForm('userCreate', () => useAiForm(formRef, { id: 'userCreate' }))
 ```
 
-> 业务应用不需要直接引用 `@huangfeng19820712/form-pilot-core`；所有核心能力通过本包句柄与 MCP 客户端间接使用。
+> 业务应用不需要直接引用 `@fhuang/form-pilot-core`；所有核心能力通过本包句柄与 MCP 客户端间接使用。
 
 ## 运行与开发
 
@@ -92,8 +92,8 @@ pnpm -w run build
 - 仅构建 Vue 接入层
 
 ```bash
-pnpm --filter @huangfeng19820712/form-pilot-vue run typecheck
-pnpm --filter @huangfeng19820712/form-pilot-vue run build
+pnpm --filter @fhuang/form-pilot-vue run typecheck
+pnpm --filter @fhuang/form-pilot-vue run build
 ```
 
 ## 扩展开发

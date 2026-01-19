@@ -1,10 +1,10 @@
-import { createFormRuntime } from "@huangfeng19820712/form-pilot-core";
-import { setValues as coreSetValues } from "@huangfeng19820712/form-pilot-core";
-import { getValues as coreGetValues } from "@huangfeng19820712/form-pilot-core";
-import { validate as coreValidate } from "@huangfeng19820712/form-pilot-core";
-import { submit as coreSubmit } from "@huangfeng19820712/form-pilot-core";
-import type { AdapterDescriptor } from "@huangfeng19820712/form-pilot-core";
-import type { FormLifecycleHooks, FormRuntime, FormSchema } from "@huangfeng19820712/form-pilot-core";
+import { createFormRuntime } from "@fhuang/form-pilot-core";
+import { setValues as coreSetValues } from "@fhuang/form-pilot-core";
+import { getValues as coreGetValues } from "@fhuang/form-pilot-core";
+import { validate as coreValidate } from "@fhuang/form-pilot-core";
+import { submit as coreSubmit } from "@fhuang/form-pilot-core";
+import type { AdapterDescriptor } from "@fhuang/form-pilot-core";
+import type { FormLifecycleHooks, FormRuntime, FormSchema } from "@fhuang/form-pilot-core";
 import type { AiFormHandle, UseAiFormOptions } from "./types.js";
 
 function noOpHandle(): AiFormHandle {
