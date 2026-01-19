@@ -1,6 +1,6 @@
 {
   "name": "@fhuang/form-pilot-adapter-plain",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "private": false,
   "description": "Plain object form adapter for FormPilot demos (no UI library)",
   "license": "MIT",
@@ -8,7 +8,9 @@
   "main": "dist/index.js",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "typecheck": "tsc -p tsconfig.json --noEmit",
