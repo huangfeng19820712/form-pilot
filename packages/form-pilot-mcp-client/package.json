@@ -1,6 +1,6 @@
 {
   "name": "@fhuang/form-pilot-mcp-client",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "description": "FormPilot MCP client - controlled tool execution with guards and audit",
   "license": "MIT",

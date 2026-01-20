@@ -1,5 +1,14 @@
 # admin-vue3
 
+## 0.1.5
+
+### Patch Changes
+
+- Updated dependencies [[`635a0067c6f5db35dfb3b16fb2738c32a1cf816b`](https://github.com/huangfeng19820712/form-pilot/commit/635a0067c6f5db35dfb3b16fb2738c32a1cf816b)]:
+  - @fhuang/form-pilot-vue@0.1.5
+  - @fhuang/form-pilot-mcp-client@0.1.5
+  - @fhuang/form-pilot-adapter-plain@0.1.5
+
 ## 0.1.4
 
 ### Patch Changes
