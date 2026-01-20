@@ -121,6 +121,116 @@ client.registerForm('userCreate', handle)
 client.connectWS('wss://mcp.example.com/tools')
 ```
 
+## 第三方项目接入指南
+
+- 安装依赖（npm/yarn/pnpm 均可）
+
+```bash
+# 必需：Vue 接入层（Vue2/3 统一）
+pnpm add @fhuang/form-pilot-vue vue-demi
+
+# 可选：AI/MCP 客户端（需要让 AI 操作表单时）
+pnpm add @fhuang/form-pilot-mcp-client
+
+# 可选：示例适配器（纯对象表单，无 UI 库时演示用）
+pnpm add @fhuang/form-pilot-adapter-plain
+```
+
+- 重要说明
+  - 业务仅需依赖 `@fhuang/form-pilot-vue`，如需 AI 操作再增加 `@fhuang/form-pilot-mcp-client`
+  - 不直接依赖 `@fhuang/form-pilot-core`
+  - 需要 `vue` 与 `vue-demi`（统一 Vue2/3 API）
+
+### Vue3 使用示例
+
+- 在 `main.ts` 注册插件与适配器
+
+```ts
+import { createApp } from 'vue'
+import App from './App.vue'
+import { FormPilotPlugin } from '@fhuang/form-pilot-vue'
+import PlainAdapter from '@fhuang/form-pilot-adapter-plain'
+
+const app = createApp(App)
+app.use(FormPilotPlugin, { adapters: [PlainAdapter] })
+app.mount('#app')
+```
+
+- 在组件中创建句柄并操作表单
+
+```ts
+import { ref } from 'vue'
+import { useAiForm } from '@fhuang/form-pilot-vue'
+
+const formRef = ref()
+const handle = useAiForm(formRef, { id: 'userCreate' })
+
+await handle.setValues({ name: 'Alice', email: 'alice@example.com' })
+const ok = await handle.validate()
+if (ok) await handle.submit()
+```
+
+### Vue2 使用示例
+
+- 在 `main.js` 注册插件与适配器
+
+```js
+import Vue from 'vue'
+import { FormPilotPlugin } from '@fhuang/form-pilot-vue'
+import PlainAdapter from '@fhuang/form-pilot-adapter-plain'
+
+Vue.use(FormPilotPlugin, { adapters: [PlainAdapter] })
+new Vue({ render: h => h(App) }).$mount('#app')
+```
+
+- 在组件中创建句柄并操作表单
+
+```js
+import { useAiForm } from '@fhuang/form-pilot-vue'
+
+export default {
+  mounted() {
+    this.handle = useAiForm(this.$refs.formRef, { id: 'userCreate' })
+    this.handle.setValues({ name: 'Alice' })
+  }
+}
+```
+
+### 与 AI/MCP 集成（可选）
+
+- 安装 `@fhuang/form-pilot-mcp-client` 后，在应用中注册表单并连接工具服务端
+
+```ts
+import { MCPClient } from '@fhuang/form-pilot-mcp-client'
+import { useAiForm } from '@fhuang/form-pilot-vue'
+
+const client = new MCPClient({
+  actor: 'ai-bot',
+  guards: { userCreate: { allowedFields: ['name', 'email'] } },
+  clientGuard: { submitRequiresConfirm: true, confirm: async id => window.confirm(`确认提交 ${id}?`) },
+  onAudit: entry => sendToSIEM(entry),
+})
+
+client.registerForm('userCreate', () => useAiForm(formRef, { id: 'userCreate' }))
+client.connectWS('wss://mcp.example.com/tools')
+// 或：client.connectSSE('https://mcp.example.com/tools')
+```
+
+### API 提示
+
+- `@fhuang/form-pilot-vue`
+  - `useAiForm(formRef, options)` 返回句柄，包含 `getSchema/getValues/setValues/validate/submit`
+  - `FormPilotPlugin` 用于全局注册适配器与生命周期钩子
+- `@fhuang/form-pilot-mcp-client`
+  - `MCPClient(options)` 提供工具路由、字段守卫、提交确认与审计
+  - `registerForm(formId, getter)` 绑定表单；`connectWS`/`connectSSE` 连接工具服务端
+
+### 适配器说明
+
+- 对接 Element/AntD 等 UI 表单库时，需要实现并注册对应的适配器描述
+- 无 UI 库或演示可使用 `@fhuang/form-pilot-adapter-plain`（基于纯对象推断 schema）
+
+
 ## 扩展开发
 
 - 适配器扩展：在 core 中定义新的适配器描述，接入不同 UI 表单库（Element/AntD 等），通过 `FormPilotPlugin` 注册到 Vue 层
