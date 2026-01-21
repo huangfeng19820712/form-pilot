@@ -1,5 +1,15 @@
 # @fhuang/form-pilot-mcp-client
 
+## 0.1.6
+
+### Patch Changes
+
+- [`7178d49234eca6a4a8058be279bc4b29a95ef4be`](https://github.com/huangfeng19820712/form-pilot/commit/7178d49234eca6a4a8058be279bc4b29a95ef4be) - 下调 TypeScript 编译目标至 ES2018 以兼容 Vue2 构建链，移除依赖包输出中的 ES2020 语法（如 Nullish Coalescing）。不涉及 API 变更。
+
+- Updated dependencies [[`7178d49234eca6a4a8058be279bc4b29a95ef4be`](https://github.com/huangfeng19820712/form-pilot/commit/7178d49234eca6a4a8058be279bc4b29a95ef4be)]:
+  - @fhuang/form-pilot-core@0.1.6
+  - @fhuang/form-pilot-vue@0.1.6
+
 ## 0.1.5
 
 ### Patch Changes

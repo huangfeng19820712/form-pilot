@@ -1,6 +1,6 @@
 {
   "name": "@fhuang/form-pilot-vue",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": false,
   "description": "FormPilot Vue binding layer (Vue2/Vue3 unified)",
   "license": "MIT",

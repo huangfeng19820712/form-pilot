@@ -1,6 +1,6 @@
 {
   "name": "@fhuang/form-pilot-core",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "private": false,
   "description": "FormPilot core - framework-agnostic form semantics and adapter contracts",
   "license": "MIT",
