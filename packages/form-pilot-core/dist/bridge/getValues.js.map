@@ -1,1 +1,0 @@
-{"version":3,"file":"getValues.js","sourceRoot":"","sources":["../../src/bridge/getValues.ts"],"names":[],"mappings":"AAEA,MAAM,UAAU,SAAS,CAAI,OAAuB;IAClD,MAAM,OAAO,GAAmB,OAAO,CAAC,OAAO,CAAC;IAChD,OAAO,OAAO,CAAC,SAAS,CAAC,OAAO,CAAC,QAAQ,CAAC,CAAC;AAC7C,CAAC"}
